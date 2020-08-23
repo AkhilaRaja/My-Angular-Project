@@ -1,0 +1,85 @@
+<h1 mat-dialog-title class="dialogTitle">{{action}} Voter</h1>
+<div mat-dialog-content>
+    <div class="example-container" *ngIf="action != 'Delete'; else elseTemplate">
+        <!-- Serial Number -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="Serial Number" [(ngModel)]="local_data.serialNo">
+        </mat-form-field>
+        <!-- Voter Name -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="Voter Name" [(ngModel)]="local_data.voterName">
+        </mat-form-field>
+        <!-- Guardian Name -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="Guardian Name" [(ngModel)]="local_data.guardianName">
+        </mat-form-field>
+        <!-- House Number -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="House Number" [(ngModel)]="local_data.houseNo">
+        </mat-form-field>
+        <!-- Address -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="Address" [(ngModel)]="local_data.address">
+        </mat-form-field>
+        <!-- Gender -->
+        <mat-form-field class="componentSize">
+            <mat-select placeholder="Select gender" [(ngModel)]="local_data.gender" name="gender">
+                <mat-option value="Male"> Male </mat-option>
+                <mat-option value="Female"> Female </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Age -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="Age" [(ngModel)]="local_data.age">
+        </mat-form-field>
+        <!-- ID Card Number -->
+        <mat-form-field class="componentSize">
+            <input matInput placeholder="ID Card Number" [(ngModel)]="local_data.idCardNo">
+        </mat-form-field>
+        <!-- District combo -->
+        <mat-form-field class="componentSize">
+            <mat-select placeholder="Select district" [(ngModel)]="districtCode" name="district"
+                (selectionChange)="searchLocalbody()">
+                <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+                    {{district.districtName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Local Body combo -->
+        <mat-form-field class="componentSize">
+            <mat-select placeholder="Select Localbody" [(ngModel)]="localBodyCode" name="localBody"
+                selected="localBodyCode" (selectionChange)="searchWard()">
+                <mat-option *ngFor="let localBody of localbodyList" [value]="localBody.localBodyCode">
+                    {{localBody.localBodyName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Ward combo -->
+        <mat-form-field class="componentSize">
+            <mat-select placeholder="Select Ward" [(ngModel)]="wardCode" name="ward"
+                (selectionChange)="searchPollingStation()">
+                <mat-option *ngFor="let ward of wardList" [value]="ward.wardCode">
+                    {{ward.wardName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- PollingStation combo -->
+        <mat-form-field class="componentSize">
+            <mat-select placeholder="Select PollingStation" [(ngModel)]="local_data.pollingStationCode"
+                name="pollingStation">
+                <mat-option *ngFor="let pollingStation of pollingStationList"
+                    [value]="pollingStation.pollingStationCode">
+                    {{pollingStation.pollingStationName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <ng-template #elseTemplate class="example-container-delete">
+        <h1 class="textColor"><b>Are you sure you want to delete?</b></h1>
+    </ng-template>
+</div>
+<div mat-dialog-actions class="dialogButtons">
+    <button mat-button (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title class="dialogTitle">Upload a file</h1>
+<div mat-dialog-content>
+
+  <mat-form-field floatPlaceholder="never">
+    <input [hidden]="true" (change)="onFileSelect($event)" type="file" accept="all/*" #fileSelect>
+    <input readonly matInput [(ngModel)]="filePath" placeholder="Select file..." />
+    <button *ngIf="this.base64File" (click)="this.base64File = null; this.filePath = null" matSuffix
+      matTooltip="Remove selected file" [matTooltipPosition]="'above'" type="button" color="warn" mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+    <button matSuffix mat-icon-button (click)="fileSelect.click();" matTooltip="Select a file"
+      [matTooltipPosition]="'above'">
+      <mat-icon>file_upload</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<!-- Upload and Cancel buttons -->
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="primary">Upload</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>

@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{action}} Caste</h1>
+<div mat-dialog-content>
+  <div class="example-container" *ngIf="action != 'Delete'; else elseTemplate">
+    <mat-form-field>
+      <input matInput placeholder="Caste Code" [(ngModel)]="local_data.casteCode">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Caste Name" [(ngModel)]="local_data.casteName">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select Religion" [(ngModel)]="local_data.religionCode">
+        <mat-option value="01">Hindu</mat-option>
+        <mat-option value="02">Christian</mat-option>
+        <mat-option value="03">Muslim</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <ng-template #elseTemplate class="example-container-delete">
+    <h1 class="textColor"><b>Are you sure you want to delete?</b></h1>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>

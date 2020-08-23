@@ -1,0 +1,103 @@
+.formMargin{
+    margin-left: 32px;
+    padding-top: 20px;
+}
+.body-bar{
+    background-color: #f5f2ee;
+    height: 89.5%;
+}
+.mat-table{
+    background-color: #f5f2ee;
+}
+table {
+    width: 100%;
+}
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+.body-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-top: 0px;
+    overflow: auto;
+    margin-right: 32px;
+    margin-left: 32px;
+    max-height: 82%;
+}
+.body-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+  
+div.body-header>.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+.button-go-to-input {
+    margin: 0px 20px 0px 0px;
+    position: fixed;
+    right: 0;
+    background-color: rgb(226, 117, 117);
+}
+.delete-selected{
+    margin: 0px 70px 0px 0px;
+    position: fixed;
+    right: 0;
+    background-color: rgb(226, 117, 117);
+}
+.upload-selected{
+    margin: 0px 120px 0px 0px;
+    position: fixed;
+    right: 0;
+    background-color: rgb(226, 117, 117);
+}
+.searchbtn{
+    bottom:8px;
+}
+.mat-raised-button{
+    margin-left: 10px;
+}
+.row-count{
+    padding: 8px 24px 0;
+}
+.localBodyComboClass{
+    padding-left: 8px;
+}
+.wardComboClass{
+    padding-left: 8px;
+}
+.pollingStationComboClass{
+    padding-left: 8px;
+}
+.electionBodyComboClass{
+    padding-left: 8px;
+}
+.nav-bar{
+    background-color: #233857;
+    height: 75px;
+    position: relative;
+    width:100%;
+    display: flex;
+}
+.title-design{
+    padding-top: 20px;
+    padding-left:32px;
+    position: relative;
+    font-size: x-large;
+    color: white;
+}
+.home-btn{
+    border-radius: 5px;
+    background-color: white;
+    height: 30px;
+    width: 70px;
+    margin-left: 93%;
+    margin-top: 22px;
+    position: fixed;
+}
+.backbtn-text{
+    color:black;
+    font-size: 14px;
+}

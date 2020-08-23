@@ -1,0 +1,76 @@
+.formMargin{
+    margin-left: 90%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.body-bar{
+    background-color: #f5f2ee;
+    height: 89.5%;
+}
+.mat-table{
+    background-color: #f5f2ee;
+}
+table {
+    width: 100%;
+}
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+.body-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-top: 0px;
+    overflow: auto;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+.table-container {
+    overflow: auto;
+}
+.body-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+.row-count{
+    padding: 8px 24px 0;
+}
+.button-go-to-input{
+    background-color: rgb(226, 117, 117);
+}
+.delete-selected{
+    right:8px;
+    background-color: rgb(226, 117, 117);
+}
+.refresh-screen{
+    right:16px;
+    background-color: rgb(226, 117, 117);
+}
+.nav-bar{
+    background-color: #233857;
+    height: 75px;
+    position: relative;
+    width:100%;
+    display: flex;
+}
+.title-design{
+    padding-top: 20px;
+    padding-left:32px;
+    position: relative;
+    font-size: x-large;
+    color: white;
+}
+.home-btn{
+    border-radius: 5px;
+    background-color: white;
+    height: 30px;
+    width: 70px;
+    margin-left: 93%;
+    margin-top: 22px;
+    position: fixed;
+}
+.backbtn-text{
+    color:black;
+    font-size: 14px;
+}

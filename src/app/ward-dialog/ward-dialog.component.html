@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>{{action}} Ward</h1>
+<div mat-dialog-content>
+  <div class="example-container" *ngIf="action != 'Delete'; else elseTemplate">
+    <mat-form-field>
+      <input matInput placeholder="Ward Code" [(ngModel)]="local_data.wardCode">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Ward Name" [(ngModel)]="local_data.wardName">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select District" [(ngModel)]="local_data.districtCode" name="district"
+        (selectionChange)="searchLocalbody()">
+        <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+          {{district.districtName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select Local body" [(ngModel)]="local_data.localBodyCode" name="localBody">
+        <mat-option *ngFor="let localBody of localbodyList" [value]="localBody.localBodyCode">
+          {{localBody.localBodyName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <ng-template #elseTemplate class="example-container-delete">
+    <h1 class="textColor"><b>Are you sure you want to delete?</b></h1>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>

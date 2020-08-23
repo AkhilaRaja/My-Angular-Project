@@ -1,0 +1,100 @@
+<div class="nav-bar">
+  <h1 class="title-design">Caste List</h1>
+  <button mat-raised-button class="home-btn" (click)="backToHome()">
+    <h3 class="backbtn-text">Home</h3>
+  </button>
+</div>
+<!-- StateCombo and search button -->
+<div class="body-bar">
+  <form class="formMargin">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Select religion</mat-label>
+        <mat-select [(ngModel)]="religionCode" name="religion">
+          <mat-option *ngFor="let religion of religions" [value]="religion.value">
+            {{religion.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="searchbtn" (click)="search()">Search</button>
+
+      <!-- Add and Delete button -->
+      <button mat-mini-fab class="button-go-to-input" (click)="openDialog('Add',{})"
+        matTooltip="Create New  Event" matTooltipPosition="left" matTooltipHideDelay="100">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+      <button mat-mini-fab class="delete-selected" (click)="openDialog('Delete',{})" matTooltip="Delete"
+        matTooltipPosition="left" matTooltipHideDelay="100">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </form>
+
+  <!-- Starting from filter -->
+  <div class="body-container mat-elevation-z8">
+
+    <!-- Filter -->
+    <div class="body-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+
+    <!-- RowCount -->
+    <mat-label class="row-count mat-subheading-2">Count :{{rowCount}} </mat-label>
+
+    <!-- Table -->
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!--  ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!--  State Code Column -->
+        <ng-container matColumnDef="religionCode">
+          <th mat-header-cell *matHeaderCellDef> Religion Code </th>
+          <td mat-cell *matCellDef="let element"> {{element.religionCode}} </td>
+        </ng-container>
+
+        <!--  District Code Column -->
+        <ng-container matColumnDef="casteCode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Caste Code </th>
+          <td mat-cell *matCellDef="let element"> {{element.casteCode}} </td>
+        </ng-container>
+
+        <!-- District Name Column -->
+        <ng-container matColumnDef="casteName">
+          <th mat-header-cell *matHeaderCellDef> Caste Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.casteName}} </td>
+        </ng-container>
+
+        <!--Update Column -->
+        <ng-container matColumnDef="editdetails">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="accent" (click)="openDialog('Update',element)">Edit</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>

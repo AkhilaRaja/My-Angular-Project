@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>{{action}} Candidate</h1>
+<div mat-dialog-content>
+    <div class="example-container" *ngIf="action != 'Delete'; else elseTemplate">
+        <!-- Candidate Code Column -->
+        <mat-form-field>
+            <input matInput placeholder="Candidate Code" [(ngModel)]="local_data.candidateCode">
+        </mat-form-field>
+        <!-- Candidate Name Column -->
+        <mat-form-field>
+            <input matInput placeholder="Candidate Name" [(ngModel)]="local_data.candidateName">
+        </mat-form-field>
+        <!-- Party Code Column -->
+        <mat-form-field>
+            <input matInput placeholder="PartyCode" [(ngModel)]="local_data.partyCode">
+        </mat-form-field>
+        <!-- Candidate Color Column -->
+        <mat-form-field>
+            <input matInput placeholder="Candidate Color" [(ngModel)]="local_data.candidateColor">
+        </mat-form-field>
+        <!-- Election Body Combo -->
+        <mat-form-field>
+            <mat-select placeholder="Election Body" [(ngModel)]="local_data.electionBody">
+                <mat-option value="panchayat">Panchayath</mat-option>
+                <mat-option value="blockPanchayat">Block Panchayath</mat-option>
+                <mat-option value="districtPanchayat">District Panchayath</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- District combo -->
+        <mat-form-field>
+            <mat-select placeholder="Select district" [(ngModel)]="districtCode" name="district"
+                (selectionChange)="searchLocalbody()">
+                <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+                    {{district.districtName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Local Body combo -->
+        <mat-form-field class="localBodyComboClass">
+            <mat-select placeholder="Select Localbody" [(ngModel)]="localBodyCode" name="localBody"
+                selected="localBodyCode" (selectionChange)="searchWard()">
+                <mat-option *ngFor="let localBody of localbodyList" [value]="localBody.localBodyCode">
+                    {{localBody.localBodyName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Ward combo -->
+        <mat-form-field>
+            <mat-select placeholder="Select Ward" [(ngModel)]="wardCode" name="ward"
+                (selectionChange)="searchPollingStation()">
+                <mat-option *ngFor="let ward of wardList" [value]="ward.wardCode">
+                    {{ward.wardName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- PollingStation combo -->
+        <mat-form-field>
+            <mat-select placeholder="Select PollingStation" [(ngModel)]="local_data.pollingStationCode"
+                name="pollingStation">
+                <mat-option *ngFor="let pollingStation of pollingStationList"
+                    [value]="pollingStation.pollingStationCode">
+                    {{pollingStation.pollingStationName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <ng-template #elseTemplate class="example-container-delete">
+        <h1 class="textColor"><b>Are you sure you want to delete?</b></h1>
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>
