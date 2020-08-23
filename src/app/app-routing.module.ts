@@ -21,6 +21,10 @@ const routes: Routes = [
   component: HomepageComponent
 },
 {
+  path:'home',
+  component: HomepageComponent
+},
+{
   path: 'district',
   component: DistrictComponent
 },
