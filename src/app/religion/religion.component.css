@@ -1,14 +1,5 @@
-.formMargin{
-    margin-left: 90%;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
 .body-bar{
-    background-color: #f5f2ee;
-    height: 89.5%;
-}
-.mat-table{
-    background-color: #f5f2ee;
+    height: auto;
 }
 table {
     width: 100%;
@@ -16,6 +7,18 @@ table {
 .mat-table {
     overflow: auto;
     max-height: 500px;
+}
+th.mat-header-cell{
+    min-width: 100px;
+}
+.header-btns{
+    height: 32px;
+    margin-top: 8px;
+    padding-bottom: 16px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 32px;
 }
 .body-container {
     display: flex;
@@ -37,14 +40,14 @@ table {
     padding: 8px 24px 0;
 }
 .button-go-to-input{
+    margin-left: 8px;
     background-color: rgb(226, 117, 117);
 }
 .delete-selected{
-    right:8px;
     background-color: rgb(226, 117, 117);
 }
 .refresh-screen{
-    right:16px;
+    margin-left: 8px;
     background-color: rgb(226, 117, 117);
 }
 .nav-bar{
@@ -52,7 +55,6 @@ table {
     height: 75px;
     position: relative;
     width:100%;
-    display: flex;
 }
 .title-design{
     padding-top: 20px;
@@ -66,9 +68,12 @@ table {
     background-color: white;
     height: 30px;
     width: 70px;
-    margin-left: 93%;
-    margin-top: 22px;
-    position: fixed;
+}
+.home-btn-div{
+    display:flex;
+    justify-content: flex-end;
+    margin-top:-45px;
+    padding-right: 32px;
 }
 .backbtn-text{
     color:black;

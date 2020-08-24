@@ -1,14 +1,18 @@
+<!-- Header -->
 <div class="nav-bar">
   <h1 class="title-design">Caste List</h1>
-  <button mat-raised-button class="home-btn" (click)="backToHome()">
-    <h3 class="backbtn-text">Home</h3>
-  </button>
+  <div class="home-btn-div">
+    <button mat-raised-button class="home-btn" (click)="backToHome()">
+      <h3 class="backbtn-text">Home</h3>
+    </button>
+  </div>
 </div>
-<!-- StateCombo and search button -->
+
+<!-- Religion and search button -->
 <div class="body-bar">
   <form class="formMargin">
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field class="religionComboClass" appearance="fill">
         <mat-label>Select religion</mat-label>
         <mat-select [(ngModel)]="religionCode" name="religion">
           <mat-option *ngFor="let religion of religions" [value]="religion.value">
@@ -17,18 +21,20 @@
         </mat-select>
       </mat-form-field>
       <button mat-raised-button color="primary" class="searchbtn" (click)="search()">Search</button>
-
-      <!-- Add and Delete button -->
-      <button mat-mini-fab class="button-go-to-input" (click)="openDialog('Add',{})"
-        matTooltip="Create New  Event" matTooltipPosition="left" matTooltipHideDelay="100">
-        <mat-icon>add_circle</mat-icon>
-      </button>
-      <button mat-mini-fab class="delete-selected" (click)="openDialog('Delete',{})" matTooltip="Delete"
-        matTooltipPosition="left" matTooltipHideDelay="100">
-        <mat-icon>delete</mat-icon>
-      </button>
     </div>
   </form>
+
+  <!-- Add and Delete button -->
+  <div class="header-btns">
+    <button mat-mini-fab class="delete-selected" (click)="openDialog('Delete',{})" matTooltip="Delete"
+      matTooltipPosition="left" matTooltipHideDelay="100">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-mini-fab class="button-go-to-input" (click)="openDialog('Add',{})" matTooltip="Create New  Event"
+      matTooltipPosition="left" matTooltipHideDelay="100">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
 
   <!-- Starting from filter -->
   <div class="body-container mat-elevation-z8">
