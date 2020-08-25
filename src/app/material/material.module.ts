@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 
 const MaterialComponents = [
@@ -35,7 +36,8 @@ const MaterialComponents = [
   MatIconModule,
   MatRippleModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatCardModule
 ];
 @NgModule({
   exports: [MaterialComponents],

@@ -24,9 +24,13 @@ div.skill-section > h1.mat-h3.mat-title, div.project-section > h1.mat-h3.mat-tit
 .publication-section .mat-h3.mat-title, .cert-section .mat-h3.mat-title, .contact-section .mat-h3.mat-title{
     margin-bottom: 0px !important;
 }
+.tech .mat-h3.mat-title, .design .mat-h3.mat-title {
+    margin-bottom: 0px !important;
+}
 .skill-contents{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .publication-section, .cert-section, .publication-contents, .cert-contents, .contact-section{
     text-align: center;
@@ -49,4 +53,15 @@ div.skill-section > h1.mat-h3.mat-title, div.project-section > h1.mat-h3.mat-tit
 }
 .linkedin{
     padding-right: 8px;
+}
+.tech{
+    width: 200px;
+}
+.design{
+    width: 200px;
+    margin-left: 12%;
+}
+.framework{
+    display: flex;
+    justify-content: center;
 }

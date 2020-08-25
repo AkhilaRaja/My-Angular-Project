@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AboutMeComponent implements OnInit {
 
+  technologyItems=['Java', 'JS'];
+  frameworkItems = ['Spring', 'SpringBoot', 'Angular'];
+  designItems = ['HTML5', 'CSS']
+
   constructor(private _route: Router) { }
 
   ngOnInit(): void {

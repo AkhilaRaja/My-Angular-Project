@@ -26,6 +26,7 @@ import { CandidateDialogComponent } from './candidate-dialog/candidate-dialog.co
 import { VoterComponent } from './voter/voter.component';
 import { VoterDialogComponent } from './voter-dialog/voter-dialog.component';
 import { VoterUploadDialogComponent } from './voter-upload-dialog/voter-upload-dialog.component';
+import { BulletListComponent } from './bullet-list/bullet-list.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { VoterUploadDialogComponent } from './voter-upload-dialog/voter-upload-d
     CandidateDialogComponent,
     VoterComponent,
     VoterDialogComponent,
-    VoterUploadDialogComponent
+    VoterUploadDialogComponent,
+    BulletListComponent
   ],
   imports: [
     BrowserModule,

@@ -30,15 +30,26 @@
     <hr style="width:75%" />
 
     <div class="skill-contents">
-        <div class="tech" id="technologyChart">
-            <h2 class="mat-h3 mat-title">Technologies</h2>
+        <div class="tech">
+            <mat-card>
+                <h2 class="mat-h3 mat-title">Technologies</h2>
+                <app-bullet-list [items]="technologyItems" color="green"></app-bullet-list>
+            </mat-card>
         </div>
-        <div class="framework">
-            <h2 class="mat-h3 mat-title">Frameworks</h2>
-        </div>
+
         <div class="design">
-            <h2 class="mat-h3 mat-title">Design</h2>
+            <mat-card>
+                <h2 class="mat-h3 mat-title">Design</h2>
+                <app-bullet-list [items]="designItems" color="green"></app-bullet-list>
+            </mat-card>
         </div>
+    </div>
+    <br />
+    <div class="framework">
+        <mat-card>
+            <h2 class="mat-h3 mat-title">Frameworks</h2>
+            <app-bullet-list [items]="frameworkItems" color="green"></app-bullet-list>
+        </mat-card>
     </div>
     <br />
 
@@ -61,17 +72,18 @@
             poll
             results in the app.</p>
         <br />
-        I have developed a UI to manage the database, to insert, retrieve, modify and delete the data.
+        I have also developed a UI to manage the database, to insert, retrieve, modify and delete the data.
         <br />
-        <b>Database : Firebase</b> | <b>Front end : Angular</b> | <b>Back end : SpringBoot</b>
+        <b>Front end : Angular</b> | <b>Back end : SpringBoot</b> | <b>Database : Firebase</b>
         <br />
         <br />
         Git project URL:
         <b><a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari">Front end</a>,&nbsp;
             <a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari-Java">Back end</a></b>
         <br />
-        Web URL:<b><a style="color:rgb(19, 78, 204)" href="https://election-data-management.herokuapp.com/homepage">
-                BoothPrabhari Backend</a></b>
+        Web URL(Only for Demo):<b><a style="color:rgb(19, 78, 204)"
+                href="https://election-data-management.herokuapp.com/homepage">
+                BoothPrabhari</a></b>
     </div>
     <br />
     <br />
@@ -85,7 +97,7 @@
     <div class="edu-contents">
         <b>B.Tech in Computer Science and Engineering</b>, Muthoot Institute of Technology and Science, 2018<br />
         <b>CGPA: 8.3</b><br />
-        <b>Mahantma Gandhi University</b>
+        <b>Mahatma Gandhi University</b>
 
     </div>
     <br />

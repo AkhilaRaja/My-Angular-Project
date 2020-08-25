@@ -99,7 +99,6 @@ export class DistrictComponent implements OnInit {
             verticalPosition: 'bottom',
             horizontalPosition: 'left'
           });
-
         } else if (result.event == 'Update') {
           let districtEnity: DistrictEntity = {
             id: result.data.id,
