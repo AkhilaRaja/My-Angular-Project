@@ -1,0 +1,67 @@
+.about-me{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.image-aboutme {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+.header-title {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+}
+mat-label.mat-display-2 {
+    margin-bottom: 8px !important;
+}
+.skill-section, .project-section, .brief-desc, h4.mat-headline, .project-contents, .edu-section, .edu-contents{
+    text-align: center;
+}
+div.skill-section > h1.mat-h3.mat-title, div.project-section > h1.mat-h3.mat-title, div.edu-section > h1.mat-h3.mat-title{
+    margin-bottom: 0px !important;
+}
+.publication-section .mat-h3.mat-title, .cert-section .mat-h3.mat-title, .contact-section .mat-h3.mat-title{
+    margin-bottom: 0px !important;
+}
+.tech .mat-h3.mat-title, .design .mat-h3.mat-title {
+    margin-bottom: 0px !important;
+}
+.skill-contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.publication-section, .cert-section, .publication-contents, .cert-contents, .contact-section{
+    text-align: center;
+}
+.contact-contents{
+    display: flex;
+    justify-content: center;
+}
+.address{
+    width:50%;
+    margin-left:25%;
+}
+.profiles{
+    width:50%;
+}
+.footer{
+    padding-bottom: 12%;
+    display: flex;
+    justify-content: center;
+}
+.linkedin{
+    padding-right: 8px;
+}
+.tech{
+    width: 200px;
+}
+.design{
+    width: 200px;
+    margin-left: 12%;
+}
+.framework{
+    display: flex;
+    justify-content: center;
+}

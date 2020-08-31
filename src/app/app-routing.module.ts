@@ -10,11 +10,16 @@ import { VoterComponent } from './voter/voter.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { ReligionComponent } from './religion/religion.component';
 import { CasteComponent } from './caste/caste.component';
+import { ProfileRahulComponent } from './profile-rahul/profile-rahul.component';
 
 const routes: Routes = [
 {
   path:'aboutme',
   component: AboutMeComponent
+},
+{
+  path: 'RahulRPillai',
+  component: ProfileRahulComponent
 },
 {
   path:'homepage',
