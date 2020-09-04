@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-profile-rahul',
@@ -7,11 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileRahulComponent implements OnInit {
 
-  technologyItems=['Java', 'JS'];
-  frameworkItems = ['Spring', 'SpringBoot', 'Angular'];
-  designItems = ['HTML5', 'CSS']
-
-  constructor() { }
+  constructor(private titleService:Title) { 
+    this.titleService.setTitle("My Profile");
+  }
 
   ngOnInit(): void {
   }
