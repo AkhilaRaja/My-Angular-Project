@@ -104,10 +104,6 @@ hr {
     width: 45%;
     margin-left: 10%;
 }
-.pub-cert{
-    display: flex;
-    flex-wrap: wrap;
-}
 .title-cert{
     justify-content: center;
     padding-bottom: 16px;
@@ -115,21 +111,6 @@ hr {
     margin-top: 40px;
     font-size: 36px;
     font-family: Arial, Helvetica, sans-serif !important;
-}
-.title-pub{
-    justify-content: center;
-    padding-bottom: 16px;
-    display: flex;
-    margin-top: 40px;
-    font-size: 36px;
-    font-family: Arial, Helvetica, sans-serif !important;
-}
-.certification-section{
-    width: 45%;
-}
-.publication-section{
-    width: 45%;
-    margin-left: 10%;
 }
 .cert-list{
     padding-top:9px; 
@@ -147,24 +128,6 @@ hr {
     letter-spacing: normal;
     vertical-align: text-bottom;
     text-align: center;
-}
-.pub-list{
-    padding-top:9px; 
-    padding-left: 10px; 
-    font-weight: normal !important;
-    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
-    letter-spacing: normal;
-    vertical-align: text-bottom;
-    text-align: center;
-}
-.pub-list1{
-    padding-top:9px; 
-    font-weight: normal !important;
-    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
-    letter-spacing: normal;
-    vertical-align: text-bottom;
-    text-align: center;
-    color: rgb(99, 93, 93);
 }
 .title-project{
     justify-content: center;

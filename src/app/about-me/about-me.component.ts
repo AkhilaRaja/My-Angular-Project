@@ -9,10 +9,6 @@ import {Title} from "@angular/platform-browser";
 })
 export class AboutMeComponent implements OnInit {
 
-  technologyItems=['Java', 'JS'];
-  frameworkItems = ['Spring', 'SpringBoot', 'Angular'];
-  designItems = ['HTML5', 'CSS']
-
   constructor(private titleService:Title) {
     this.titleService.setTitle("My Profile");
   }
