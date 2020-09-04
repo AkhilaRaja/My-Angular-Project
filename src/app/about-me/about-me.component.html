@@ -1,173 +1,256 @@
 <div class="about-me">
-    <!-- Image and name -->
-    <div class="image-aboutme">
-        <img class="header-image" width="360" src="./assets/aboutme.png">
-    </div>
+
+    <!-- Name -->
     <div class="header-title">
-        <mat-label class="mat-display-2">Akhila Rajan</mat-label>
+        <h2 class="header-display">Akhila Rajan</h2>
     </div>
 
     <!-- Brief Description -->
     <div class="header-desc">
-        <h4 class="mat-headline">I'am Akhila Rajan, a <b>software engineer</b>, resourceful and enthusiastic person.
+        <h4 class="mat-headline-class">I'm a <b>Full Stack Engineer</b>, resourceful and enthusiastic person.
             <br />I love to learn new technologies and
             looks forward for a place where I can effectively utilize my skills for my growth along with
             my organization.</h4>
     </div>
+
+    <!-- Basic Details -->
     <div class="brief-desc">
-        <h4 class=" mat-h4 mat-subheading"><b style="color:rgb(19, 78, 204)">Sex:</b> Female |
-            <b style="color:rgb(19, 78, 204)">Date of birth: </b>18-Aug-1996|
+        <h4 class=" mat-subheading-class"><b style="color:rgb(19, 78, 204)">Sex:</b> Female |
+            <b style="color:rgb(19, 78, 204)">Date of birth: </b>18-Aug-1996 |
             <b style="color:rgb(19, 78, 204)">Nationality: </b>Indian |
             <b style="color:rgb(19, 78, 204)">Marital status: </b>Single
         </h4>
     </div>
-    <br />
 
-    <!-- Skills -->
-    <div class="skill-section">
-        <h1 class="mat-h3 mat-title">Skills</h1>
-    </div>
-    <hr style="width:75%" />
+    <hr />
 
-    <div class="skill-contents">
-        <div class="tech">
-            <mat-card>
-                <h2 class="mat-h3 mat-title">Technologies</h2>
-                <app-bullet-list [items]="technologyItems" color="green"></app-bullet-list>
-            </mat-card>
+    <!-- Image and Contact Details -->
+    <div class="image-contact">
+
+        <!-- Image -->
+        <div class="image-aboutme">
+            <img style="border-radius:5px; max-width:320px" src="./assets/aboutme.png">
         </div>
 
-        <div class="design">
-            <mat-card>
-                <h2 class="mat-h3 mat-title">Design</h2>
-                <app-bullet-list [items]="designItems" color="green"></app-bullet-list>
-            </mat-card>
+        <!-- Contact Details -->
+        <div class="image-location">
+            <table>
+                <tr>
+                    <td><img width="40" src="./assets/location1.JPG"></td>
+                    <td style="padding-left: 10px;">Pooppanal H, Puttumanoor, Puthencruz PO, Ernakulam</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="padding-left: 10px;">Kerala, Pin: 682308</td>
+                </tr>
+                <tr>
+                    <td><img width="42" src="./assets/phone1.JPG"></td>
+                    <td style="padding-left: 10px;">+91 9744837250</td>
+                </tr>
+                <tr>
+                    <td><img width="42" src="./assets/mail1.JPG"></td>
+                    <td style="padding-left: 10px;">rajan.akhila0@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><img width="44" src="./assets/edu1.JPG"></td>
+                    <td style="padding-left: 10px;">B.Tech in Computer Science and Engineering, Mahatma Gandhi
+                        University, 2018</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="padding-left: 10px;">CGPA: 8.3</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <br />
-    <div class="framework">
-        <mat-card>
-            <h2 class="mat-h3 mat-title">Frameworks</h2>
-            <app-bullet-list [items]="frameworkItems" color="green"></app-bullet-list>
-        </mat-card>
-    </div>
-    <br />
 
-    <!-- Project -->
-    <div class="project-section">
-        <h1 class="mat-h3 mat-title">Project</h1>
+    <hr />
+
+    <!-- Skill Section -->
+    <div class="title-skill">Skills</div>
+
+    <div class="skill-details">
+
+        <div class="skill-tab1">
+            <h2 style="margin-bottom:4px">Core Java</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+                    aria-valuemax="100">75%</div>
+            </div>
+
+            <h2 style="padding-top:16px; margin-bottom:4px;">Spring Framework</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0"
+                    aria-valuemax="100">55%</div>
+            </div>
+
+            <h2 style="padding-top:16px; margin-bottom:4px;">Angular</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                    aria-valuemax="100">50%</div>
+            </div>
+
+        </div>
+        <div class="skill-tab2">
+            <h2 style="margin-bottom:4px">OOP</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0"
+                    aria-valuemax="100">80%</div>
+            </div>
+
+            <h2 style="padding-top:16px; margin-bottom:4px;">Spring Boot</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0"
+                    aria-valuemax="100">55%</div>
+            </div>
+
+            <h2 style="padding-top:16px; margin-bottom:4px;">HTML5, CSS</h2>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                    aria-valuemax="100">65%</div>
+            </div>
+        </div>
     </div>
-    <hr style="width:75%" />
-    <div class="project-contents">
-        <p>
-            Worked as the backend developer for the application Booth Prabhari which is a mobile application to manage
-            voters
-            data for election. The app assists one to
-            <br />
-            easily access a particular voter based on the district, local body, ward, booth he/shebelongs to. Political
-            parties
-            can manage the voting status of the voter on
-            <br />
-            live during elections and can predict their win probability based on the status graph generated using exit
-            poll
-            results in the app.</p>
+
+    <!-- Other Skill Section -->
+    <div class="other-skills">
+
+        <div class="other-skill-section1">
+            <h2 style="margin-bottom:4px">Build Tool</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Maven - A build automation tool</b>
+            </div>
+            <h2 style="margin-bottom:4px">Testing Tool</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Postman - A tool to verify API calls</b>
+            </div>
+            <h2 style="margin-bottom:4px">Database</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Oracle - A relational database</b>
+            </div>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Firebase - Cloud based NOSQL database</b>
+            </div>
+        </div>
+
+        <div class="other-skill-section2">
+            <h2 style="margin-bottom:4px">Version Control</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Git - A distributed version control system</b>
+            </div>
+            <h2 style="margin-bottom:4px">Server</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Tomcat - An application server</b>
+            </div>
+            <h2 style="margin-bottom:4px">Project Development Tools</h2>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Eclipse - An IDE used in computer programming</b>
+            </div>
+            <div style="text-align: left; padding-bottom: 16px;">
+                <img width="28" src="./assets/bullets.JPG">
+                <b class="bullet-list">Visual Studio Code - A source code editor</b>
+            </div>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <!-- Project Section -->
+    <div class="title-project">Projects</div>
+
+    <div class="project"><img width="38" src="./assets/project.JPG"><b class="project-name">Suppy Chain Management</b>
+    </div>
+    <div class="project-detail">
+        2 years of experience as a developer in an AI enabled ERP product for Supply Chain Management. This product
+        provides
+        high usability and inputless experience for user. It is about the management of flow of goods and services
+        which includes modules such as procurement, inventory , sales, cost, accounts payable etc. I worked in designing
+        and
+        developing master manitanance screen for managing master tables used in all modules in SCM.<br />
+
+        <b style="color:#1683e3">Front end :</b> <b> Angular</b> | <b style="color:#1683e3">Back end
+            :</b><b> Spring</b> | <b style="color:#1683e3">Database :</b><b> Oracle</b><br />
+
+    </div>
+
+    <div class="project"><img width="38" src="./assets/project.JPG"><b class="project-name">Booth Prabhari</b></div>
+    <div class="project-detail">
+        Booth Prabhari is a web application to manage election at booth level in Kerala by
+        manipulating voters list in a booth(Polling Station).
+        The term "Booth Prabhari" means Polling Station In-charge.
+        The users of this application are political parties in Kerala. This app assist political parties to analyse
+        voters list in a scientific way with least error factors. It helps user to access a particular voter based on
+        the district, local body, ward and polling station he/she belongs to. User can manage the adequate details of
+        voter such as name, age, gender, address, phone number, voter Id, religion, caste, which political party he/she
+        belongs to, whether he/she died or out of station which are highly usable for winning an election.<br />
+
+        This application helps admin to manage district, local body, ward, polling station, religion, caste, candidate,
+        voters list etc with a promising UI made up of angular material.
         <br />
-        I have also developed a UI to manage the database, to insert, retrieve, modify and delete the data.
-        <br />
-        <b>Front end : Angular</b> | <b>Back end : SpringBoot</b> | <b>Database : Firebase</b>
-        <br />
-        <br />
+        <b style="color:#1683e3">Front end :</b> <b> Angular</b> | <b style="color:#1683e3">Back end :</b><b>
+            SpringBoot</b> | <b style="color:#1683e3">Database :</b><b> Firebase</b><br />
+
         Git project URL:
-        <b><a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari">Front end</a>,&nbsp;
-            <a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari-Java">Back end</a></b>
+        <a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari">Front end</a>,&nbsp;
+        <a style="color:rgb(19, 78, 204)" href="https://github.com/AkhilaRaja/BoothPrabhari-Java">Back end</a>
         <br />
-        Web URL(Only for Demo):<b><a style="color:rgb(19, 78, 204)"
-                href="https://election-data-management.herokuapp.com/homepage">
-                BoothPrabhari</a></b>
-    </div>
-    <br />
-    <br />
-
-
-    <!-- Education -->
-    <div class="edu-section">
-        <h1 class="mat-h3 mat-title">Education</h1>
-    </div>
-    <hr style="width:75%" />
-    <div class="edu-contents">
-        <b>B.Tech in Computer Science and Engineering</b>, Muthoot Institute of Technology and Science, 2018<br />
-        <b>CGPA: 8.3</b><br />
-        <b>Mahatma Gandhi University</b>
-
-    </div>
-    <br />
-    <br />
-
-    <!-- Publication -->
-    <div class="publication-section">
-        <h1 class="mat-h3 mat-title">Publication</h1>
-    </div>
-    <hr style="width:75%" />
-    <div class="publication-contents">
-        <b>Web Scanning: Existing Techniques and Future</b><br />
-        International Conference on Intelligent Computing and Control Systems (ICICCS 2018), IEEE
-    </div>
-    <br />
-    <br />
-
-    <!-- Certification -->
-    <div class="cert-section">
-        <h1 class="mat-h3 mat-title">Certification</h1>
-    </div>
-    <hr style="width:75%" />
-    <div class="cert-contents">
-        <b>Oracle Certified Associate, Java SE 8 Programmer</b><br />
-        Certificate:<b><a style="color:rgb(19, 78, 204)"
-                href="https://drive.google.com/file/d/1LLJiLVOhzTF1zIbQVkMxFUPtNMsSldWk/view">OCA</a></b>
-    </div>
-    <br /><br />
-
-    <!-- Contact details -->
-    <div class="contact-section">
-        <h1 class="mat-h3 mat-title">Contact Me</h1>
-    </div>
-    <hr style="width:75%" />
-    <div class="contact-contents">
-        <table>
-            <tr>
-                <td><b>Address:</b></td>
-                <td>Pooppanal House, Puttumanoor,</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td> Puthencruz PO, Ernakulam, Kerala</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td> Pin: 682308</td>
-            </tr>
-            <tr>
-                <td><b>Mail ID:</b></td>
-                <td> rajan.akhila0@gmail.com</td>
-            </tr>
-        </table>
+        Web URL(Only for Demo):<a style="color:rgb(19, 78, 204)"
+            href="https://election-data-management.herokuapp.com/homepage">
+            BoothPrabhari</a>
     </div>
 
-    <div class="footer">
-        <table>
-            <tr>
-                <td>
-                    <a class="git" href="https://github.com/AkhilaRaja">
-                        <img width="34" height="30px" src="./assets/gitlogo.JPG">
-                    </a>
-                </td>
-                <td>
-                    <a class="linkedin" href="https://www.linkedin.com/in/akhila-rajan-b34827150/">
-                        <img width="35" height="31px" src="./assets/Linkedin.png">
-                    </a>
-                </td>
-            </tr>
-        </table>
 
+    <hr />
+
+    <!-- Certifications and Publication Section -->
+    <div class="pub-cert">
+        <div class="certification-section">
+            <div class="title-cert">Certification</div>
+            <div style="text-align: center; padding-bottom: 16px;">
+                <img width="26" src="./assets/certificate_icon.JPG">
+                <b class="cert-list">Oracle Certified Associate, Java SE 8 Programmer</b><br />
+                <b class="cert-list1">Certificate:<a style="color:rgb(19, 78, 204)"
+                        href="https://drive.google.com/file/d/1LLJiLVOhzTF1zIbQVkMxFUPtNMsSldWk/view">OCA</a></b>
+            </div>
+        </div>
+        <div class="publication-section">
+            <div class="title-pub">Publication</div>
+            <div style="text-align: center; padding-bottom: 16px;">
+                <img width="32" src="./assets/publication_icon.JPG">
+                <b class="pub-list">Web Scanning: Existing Techniques and Future</b><br />
+                <b class="pub-list1">International Conference on Intelligent Computing and Control Systems (ICICCS
+                    2018), IEEE</b>
+            </div>
+        </div>
     </div>
+
+    <hr />
+
+    <!-- Profiles -->
+    <div class="profiles">
+        <a class="git" href="https://github.com/AkhilaRaja">
+            <img width="42" height="38px" src="./assets/git.JPG">
+        </a>
+        <a class="linkedin" href="https://www.linkedin.com/in/akhila-rajan-b34827150/">
+            <img width="42" height="38px" src="./assets/LinkedIn.JPG">
+        </a>
+    </div>
+
+    <div class="resume">
+        <a class="resume-link" style="color:rgb(19, 78, 204)"
+            href="https://drive.google.com/file/d/13yM-Ul9sooeMGA8V8pFeyfT9R-6WujlS/view?usp=sharing">
+            Find my resume here
+        </a>
+    </div>
+
+    <div class="footer-desc"></div>
+
 </div>

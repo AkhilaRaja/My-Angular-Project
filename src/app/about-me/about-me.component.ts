@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Title} from "@angular/platform-browser";
+
 
 @Component({
   selector: 'app-about-me',
@@ -12,7 +13,9 @@ export class AboutMeComponent implements OnInit {
   frameworkItems = ['Spring', 'SpringBoot', 'Angular'];
   designItems = ['HTML5', 'CSS']
 
-  constructor(private _route: Router) { }
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("My Profile");
+  }
 
   ngOnInit(): void {
   }

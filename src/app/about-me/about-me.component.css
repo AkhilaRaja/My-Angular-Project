@@ -1,67 +1,213 @@
 .about-me{
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 64px;
 }
 .image-aboutme {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
+    margin-top: 32px;
+    border-radius: 30px;
+}
+.image-location {
+    margin-top: 32px;
+    margin-left: 32px;
 }
 .header-title {
     margin-top: 8px;
-    display: flex;
-    justify-content: center;
-}
-mat-label.mat-display-2 {
     margin-bottom: 8px !important;
 }
-.skill-section, .project-section, .brief-desc, h4.mat-headline, .project-contents, .edu-section, .edu-contents{
-    text-align: center;
-}
-div.skill-section > h1.mat-h3.mat-title, div.project-section > h1.mat-h3.mat-title, div.edu-section > h1.mat-h3.mat-title{
-    margin-bottom: 0px !important;
-}
-.publication-section .mat-h3.mat-title, .cert-section .mat-h3.mat-title, .contact-section .mat-h3.mat-title{
-    margin-bottom: 0px !important;
-}
-.tech .mat-h3.mat-title, .design .mat-h3.mat-title {
-    margin-bottom: 0px !important;
-}
-.skill-contents{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.publication-section, .cert-section, .publication-contents, .cert-contents, .contact-section{
-    text-align: center;
-}
-.contact-contents{
+.header-display {
+    font-size: 50px;
     display: flex;
     justify-content: center;
+    line-height: 1.2;
+    padding-left: 32px;
 }
-.address{
-    width:50%;
-    margin-left:25%;
+.skill-section, .mat-subheading-class, h4.mat-headline-class{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 18px;
+    margin-bottom: 32px;
+    font-weight: normal !important;
+    font: 500 20px/25px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal; 
+}
+td{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+hr {
+    border-style: ridge;
+    background: #e9f0f0;
+}
+.image-contact{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+}
+.title-skill {
+    justify-content: center;
+    display: flex;
+    margin-top: 40px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.skill-details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+.progress {
+    display: flex;
+    height: 10px;
+    overflow: hidden;
+    font-size: 20px;
+    background-color:#edede5;
+    border-radius: 10px;
+  }
+  .progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .6s ease;
+  }
+.skill-tab1 {
+    width: 45%;
+}
+.skill-tab2 {
+    width: 45%;
+    margin-left: 10%;
+}
+.other-skills{
+    padding-top: 32px;
+    font-family: Arial, Helvetica, sans-serif !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bullet-list{
+    padding-top:9px; 
+    padding-left: 10px; 
+    font-weight: normal !important;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    vertical-align: text-bottom;
+}
+.footer-desc{
+    height: 80px;
+}
+.other-skill-section1{
+    width: 45%;
+}
+.other-skill-section2{
+    width: 45%;
+    margin-left: 10%;
+}
+.pub-cert{
+    display: flex;
+    flex-wrap: wrap;
+}
+.title-cert{
+    justify-content: center;
+    padding-bottom: 16px;
+    display: flex;
+    margin-top: 40px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.title-pub{
+    justify-content: center;
+    padding-bottom: 16px;
+    display: flex;
+    margin-top: 40px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.certification-section{
+    width: 45%;
+}
+.publication-section{
+    width: 45%;
+    margin-left: 10%;
+}
+.cert-list{
+    padding-top:9px; 
+    padding-left: 10px; 
+    font-weight: normal !important;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    vertical-align: text-bottom;
+    text-align: center;
+}
+.cert-list1{
+    padding-top:9px; 
+    font-weight: normal !important;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    vertical-align: text-bottom;
+    text-align: center;
+}
+.pub-list{
+    padding-top:9px; 
+    padding-left: 10px; 
+    font-weight: normal !important;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    vertical-align: text-bottom;
+    text-align: center;
+}
+.pub-list1{
+    padding-top:9px; 
+    font-weight: normal !important;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    vertical-align: text-bottom;
+    text-align: center;
+    color: rgb(99, 93, 93);
+}
+.title-project{
+    justify-content: center;
+    display: flex;
+    margin-top: 40px;
+    padding-bottom: 24px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.project-detail{
+    padding-top:24px;
+    padding-bottom: 24px;
+    font-weight: normal !important;
+    font: 500 18px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal; 
+}
+.project{
+    font: 500 26px/42px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
 }
 .profiles{
-    width:50%;
-}
-.footer{
-    padding-bottom: 12%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    padding-top: 24px;
 }
 .linkedin{
-    padding-right: 8px;
+    padding-left: 8px;
 }
-.tech{
-    width: 200px;
+td{
+    font-weight: normal !important;
+    font: 500 18px/21px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal; 
 }
-.design{
-    width: 200px;
-    margin-left: 12%;
+.resume{
+    text-align: center;
+    padding-top: 8px;
 }
-.framework{
-    display: flex;
-    justify-content: center;
+.resume-link{
+    font-weight: normal !important;
+    font: 500 18px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+}
+.project-name{
+    font-weight: normal !important;
+    vertical-align: text-bottom;
+    color: rgb(19, 78, 204);
 }
