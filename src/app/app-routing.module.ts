@@ -14,7 +14,7 @@ import { ProfileRahulComponent } from './profile-rahul/profile-rahul.component';
 
 const routes: Routes = [
 {
-  path:'aboutme',
+  path:'AkhilaRajan',
   component: AboutMeComponent
 },
 {
