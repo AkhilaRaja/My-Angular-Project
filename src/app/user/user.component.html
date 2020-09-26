@@ -1,6 +1,6 @@
 <!-- Header -->
 <div class="nav-bar">
-    <h1 class="title-design">Candidate List</h1>
+    <h1 class="title-design">User List</h1>
     <div class="home-btn-div">
         <button mat-raised-button class="home-btn" (click)="backToHome()">
             <h3 class="backbtn-text">Home</h3>
@@ -8,11 +8,23 @@
     </div>
 </div>
 
-<!-- DistrictCombo, Localbody combo, Ward combo, polling station combo and search button -->
 <div class="body-bar">
     <form class="formMargin">
         <div>
-            <!-- District combo -->
+            <mat-form-field class="accessComboClass" appearance="fill">
+                <mat-label>Select Access Type</mat-label>
+                <mat-select [(ngModel)]="accessType" name="access" (selectionChange)="loadCombo()">
+                    <mat-option *ngFor="let access of accessList" [value]="access.value">
+                        {{access.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button *ngIf="accessType == 'All' || accessType == 'Full'" mat-raised-button color="primary"
+                [disabled]="isDisabled" class="searchbtn" (click)="searchForFullAllAccess()">Search</button>
+        </div>
+    </form>
+    <div class="formMargin" *ngIf="accessType != 'Full';">
+        <div *ngIf="accessType == 'Booth';">
             <mat-form-field class="districtComboClass" appearance="fill">
                 <mat-label>Select district</mat-label>
                 <mat-select [(ngModel)]="districtCode" name="district" (selectionChange)="searchLocalbody()">
@@ -21,7 +33,6 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <!-- LocalBody combo -->
             <mat-form-field class="localBodyComboClass" appearance="fill">
                 <mat-label>Select Localbody</mat-label>
                 <mat-select [(ngModel)]="localBodyCode" name="localBody" (selectionChange)="searchWard()">
@@ -30,37 +41,48 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <!-- Ward combo -->
             <mat-form-field class="wardComboClass" appearance="fill">
                 <mat-label>Select Ward</mat-label>
-                <mat-select [(ngModel)]="wardCode" name="ward" (selectionChange)="searchPollingStation()">
+                <mat-select [(ngModel)]="wardCode" name="ward">
                     <mat-option *ngFor="let ward of wardList" [value]="ward.wardCode">
                         {{ward.wardName}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <!-- Polling Station combo -->
-            <mat-form-field class="pollingStationComboClass" appearance="fill">
-                <mat-label>Select Polling station</mat-label>
-                <mat-select [(ngModel)]="pollingStationCode" name="pollingStation">
-                    <mat-option *ngFor="let pollingStation of pollingStationList"
-                        [value]="pollingStation.pollingStationCode">
-                        {{pollingStation.pollingStationName}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <!-- Election Body combo -->
-            <mat-form-field class="electionBodyComboClass" appearance="fill">
-                <mat-label>Select Election body</mat-label>
-                <mat-select [(ngModel)]="electionBodyValue" name="electionBody">
-                    <mat-option *ngFor="let electionBody of electionBodyList" [value]="electionBody.value">
-                        {{electionBody.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button mat-raised-button color="primary" class="searchbtn" (click)="search()">Search</button>
+            <button mat-raised-button color="primary" class="searchbtn" (click)="searchForBoothAccess()">Search</button>
         </div>
-    </form>
+        <div *ngIf="accessType == 'Ward';">
+            <mat-form-field class="districtComboClass" appearance="fill">
+                <mat-label>Select district</mat-label>
+                <mat-select [(ngModel)]="districtCode" name="district" (selectionChange)="searchLocalbody()">
+                    <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+                        {{district.districtName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="localBodyComboClass" appearance="fill">
+                <mat-label>Select Localbody</mat-label>
+                <mat-select [(ngModel)]="localBodyCode" name="localBody">
+                    <mat-option *ngFor="let localBody of localbodyList" [value]="localBody.localBodyCode">
+                        {{localBody.localBodyName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="searchbtn" (click)="searchForWardAccess()">Search</button>
+        </div>
+        <div *ngIf="accessType == 'LocalBody';">
+            <mat-form-field class="districtComboClass" appearance="fill">
+                <mat-label>Select district</mat-label>
+                <mat-select [(ngModel)]="districtCode" name="district">
+                    <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+                        {{district.districtName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="searchbtn"
+                (click)="searchForLocalbodyAccess()">Search</button>
+        </div>
+    </div>
 
     <!-- Add and Delete button -->
     <div class="header-btns">
@@ -73,6 +95,7 @@
             <mat-icon>add_circle</mat-icon>
         </button>
     </div>
+
 
     <!-- Starting from filter -->
     <div class="body-container mat-elevation-z8">
@@ -111,42 +134,48 @@
                     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                 </ng-container>
 
-                <!--  Polling Station Code Column -->
-                <ng-container matColumnDef="pollingStationCode">
-                    <th mat-header-cell *matHeaderCellDef> Polling Station Code </th>
-                    <td mat-cell *matCellDef="let element"> {{element.pollingStationCode}} </td>
+                <!--  Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                 </ng-container>
 
-                <!--  Election Body Column -->
-                <ng-container matColumnDef="electionBody">
-                    <th mat-header-cell *matHeaderCellDef> Election Body Code</th>
-                    <td mat-cell *matCellDef="let element"> {{element.electionBody}} </td>
+                <!--  Party Responsibility Column -->
+                <ng-container matColumnDef="partyResponsibility">
+                    <th mat-header-cell *matHeaderCellDef> Party Responsibility </th>
+                    <td mat-cell *matCellDef="let element"> {{element.partyResponsibility}} </td>
                 </ng-container>
 
-                <!--  Party Code Column -->
-                <ng-container matColumnDef="partyCode">
-                    <th mat-header-cell *matHeaderCellDef> Party Code </th>
-                    <td mat-cell *matCellDef="let element"> {{element.partyCode}} </td>
+                <!-- Phone No Column -->
+                <ng-container matColumnDef="phoneNo">
+                    <th mat-header-cell *matHeaderCellDef> Phone No </th>
+                    <td mat-cell *matCellDef="let element"> {{element.phoneNo}} </td>
                 </ng-container>
 
-                <!--  Candidate Code Column -->
-                <ng-container matColumnDef="candidateCode">
-                    <th mat-header-cell *matHeaderCellDef> Candidate Code </th>
-                    <td mat-cell *matCellDef="let element"> {{element.candidateCode}} </td>
+                <!-- Password Column -->
+                <ng-container matColumnDef="password">
+                    <th mat-header-cell *matHeaderCellDef> Password </th>
+                    <td mat-cell *matCellDef="let element"> {{element.password}} </td>
                 </ng-container>
 
-                <!-- Candidate Name Column -->
-                <ng-container matColumnDef="candidateName">
-                    <th mat-header-cell *matHeaderCellDef> Candidate Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.candidateName}} </td>
+                <!--  Access Code Column -->
+                <ng-container matColumnDef="accessCode">
+                    <th mat-header-cell *matHeaderCellDef> Access Code </th>
+                    <td mat-cell *matCellDef="let element"> {{element.accessCode}} </td>
                 </ng-container>
 
-                <!-- Candidate Color Column -->
-                <ng-container matColumnDef="candidateColor">
-                    <th mat-header-cell *matHeaderCellDef> Candidate Color </th>
+                <!--  Access Type Column -->
+                <ng-container matColumnDef="accessType">
+                    <th mat-header-cell *matHeaderCellDef> Access Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.accessType}} </td>
+                </ng-container>
+
+                <!-- Admin Approval Status Column -->
+                <ng-container matColumnDef="adminApproved">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Admin Approval Status </th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-mini-fab [style.background-color]=element.candidateColor>
-                            <!-- <button mat-mini-fab > -->
+                        <button mat-mini-fab [ngClass]="{'status-cell': element.adminApproved==true }">
+                            {{element.adminApproved}}
                         </button></td>
                 </ng-container>
 
@@ -163,4 +192,5 @@
             </table>
         </div>
     </div>
+
 </div>

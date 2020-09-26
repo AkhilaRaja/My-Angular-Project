@@ -44,4 +44,9 @@ export class HomepageComponent implements OnInit {
   caste(){
     this._route.navigate(['/caste']);
   }
+
+  user(){
+    this._route.navigate(['/user']);
+  }
+  
 }

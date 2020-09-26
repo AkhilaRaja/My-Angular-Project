@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>{{action}} User</h1>
+<div mat-dialog-content>
+    <div class="example-container" *ngIf="action != 'Delete'; else elseTemplate">
+        <!-- Name -->
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="local_data.name">
+        </mat-form-field>
+        <!-- Party Responsibility Column -->
+        <mat-form-field>
+            <input matInput placeholder="Party Responsibility" [(ngModel)]="local_data.partyResponsibility">
+        </mat-form-field>
+        <!-- Phone Number -->
+        <mat-form-field>
+            <input matInput placeholder="Phone Number" [(ngModel)]="local_data.phoneNo">
+        </mat-form-field>
+        <!-- Password -->
+        <mat-form-field>
+            <input matInput placeholder="Password" [(ngModel)]="local_data.password">
+        </mat-form-field>
+        <!-- Access Combo -->
+        <mat-form-field>
+            <mat-select placeholder="Select Access Type" [(ngModel)]="local_data.accessType" name="access"
+                (selectionChange)="loadCombo()">
+                <mat-option value="Full">Full</mat-option>
+                <mat-option value="LocalBody">LocalBody</mat-option>
+                <mat-option value="Ward">Ward</mat-option>
+                <mat-option value="Booth">Booth</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- District combo -->
+        <mat-form-field
+            *ngIf="local_data.accessType=='Booth' || local_data.accessType=='Ward' || local_data.accessType=='LocalBody' ">
+            <mat-select placeholder="Select District" [(ngModel)]="districtCode" name="district"
+                (selectionChange)="searchLocalbody()">
+                <mat-option *ngFor="let district of districtList" [value]="district.districtCode">
+                    {{district.districtName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Localbody combo -->
+        <mat-form-field *ngIf="local_data.accessType=='Ward' || local_data.accessType=='Booth' ">
+            <mat-select placeholder="Select Local body" [(ngModel)]="localBodyCode" name="localBody"
+                (selectionChange)="searchWard()">
+                <mat-option *ngFor="let localBody of localbodyList" [value]="localBody.localBodyCode">
+                    {{localBody.localBodyName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Ward combo -->
+        <mat-form-field *ngIf="local_data.accessType=='Booth' ">
+            <mat-select placeholder="Select Ward" [(ngModel)]="wardCode" name="ward">
+                <mat-option *ngFor="let ward of wardList" [value]="ward.wardCode">
+                    {{ward.wardName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- Admin Approval -->
+        <div class="statusSelection">
+            <mat-slide-toggle #adminApproved="ngModel" class="form-control" name="adminApproved"
+                [(ngModel)]="local_data.adminApproved">
+                Admin Approval
+            </mat-slide-toggle>
+        </div>
+    </div>
+    <ng-template #elseTemplate class="example-container-delete">
+        <h1 class="textColor"><b>Are you sure you want to delete?</b></h1>
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button>Cancel</button>
+</div>

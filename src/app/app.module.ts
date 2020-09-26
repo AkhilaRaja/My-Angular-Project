@@ -27,6 +27,8 @@ import { VoterComponent } from './voter/voter.component';
 import { VoterDialogComponent } from './voter-dialog/voter-dialog.component';
 import { VoterUploadDialogComponent } from './voter-upload-dialog/voter-upload-dialog.component';
 import { ProfileRahulComponent } from './profile-rahul/profile-rahul.component';
+import { UserComponent } from './../../../booth-prabhari/src/app/user/user.component';
+import { UserDialogComponent } from './../../../booth-prabhari/src/app/user-dialog/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,10 +52,12 @@ import { ProfileRahulComponent } from './profile-rahul/profile-rahul.component';
     VoterComponent,
     VoterDialogComponent,
     VoterUploadDialogComponent,
-    ProfileRahulComponent
+    ProfileRahulComponent,
+    UserComponent,
+    UserDialogComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

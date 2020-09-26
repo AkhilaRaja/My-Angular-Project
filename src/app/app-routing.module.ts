@@ -11,6 +11,7 @@ import { CandidateComponent } from './candidate/candidate.component';
 import { ReligionComponent } from './religion/religion.component';
 import { CasteComponent } from './caste/caste.component';
 import { ProfileRahulComponent } from './profile-rahul/profile-rahul.component';
+import { UserComponent } from '../../../booth-prabhari/src/app/user/user.component';
 
 const routes: Routes = [
 {
@@ -60,6 +61,10 @@ const routes: Routes = [
 {
   path: 'caste',
   component: CasteComponent
+},
+{
+  path: 'user',
+  component: UserComponent
 }
 ];
 

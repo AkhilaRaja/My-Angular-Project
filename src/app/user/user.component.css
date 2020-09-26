@@ -1,0 +1,104 @@
+.formMargin{
+    margin-left: 24px;
+    padding-top: 16px;
+}
+.body-bar{
+    height: auto;
+}
+table {
+    width: 100%;
+}
+th.mat-header-cell{
+    min-width: 100px;
+}
+.header-btns{
+    height: 32px;
+    margin-top:-10px;
+    padding-bottom: 16px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 32px;
+}
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+.body-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-top: 0px;
+    overflow: auto;
+    margin-right: 32px;
+    margin-left: 32px;
+    max-height: 82%;
+}
+.body-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+div.body-header>.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+.button-go-to-input {
+    background-color: rgb(226, 117, 117);
+    margin-left: 8px;
+}
+.delete-selected{
+    background-color: rgb(226, 117, 117);
+}
+.searchbtn{
+    bottom:8px;
+}
+.mat-raised-button{
+    margin-left: 10px;
+}
+.row-count{
+    padding: 8px 24px 0;
+}
+.accessComboClass{
+    padding-left: 8px;
+}
+.districtComboClass{
+    padding-left: 8px;
+}
+.localBodyComboClass{
+    padding-left: 8px;
+}
+.wardComboClass{
+    padding-left: 8px;
+}
+.status-cell {
+    background-color: rgb(0, 180, 54);
+}
+.nav-bar{
+    background-color: #233857;
+    height: 75px;
+    position: relative;
+    width:100%;
+}
+.title-design{
+    padding-top: 20px;
+    padding-left:32px;
+    position: relative;
+    font-size: x-large;
+    color: white;
+}
+.home-btn{
+    border-radius: 5px;
+    background-color: white;
+    height: 30px;
+    width: 70px;
+}
+.home-btn-div{
+    display:flex;
+    justify-content: flex-end;
+    margin-top:-45px;
+    padding-right: 32px;
+}
+.backbtn-text{
+    color:black;
+    font-size: 14px;
+}
